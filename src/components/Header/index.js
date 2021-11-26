@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Dogs } from '../../assets/dogs.svg';
 import styles from './style.module.css';
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <nav className="container">
-        <Link to="/">Home</Link>
-        <Link to="/login">Login / Criar</Link>
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link to="/" className={styles.logo} aria-label="Dogs - Home">
+          <Dogs />
+        </Link>
+        <Link to="/login" className={styles.login}>Login / Criar</Link>
       </nav>
-    </div>
+    </header>
   )
 }
 
