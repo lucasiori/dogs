@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; 
+import Input from '../Forms/Input';
+import Button from '../Forms/Button';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -14,6 +16,10 @@ const LoginForm = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ username, password })
+    }).then(response => {
+      return response.json()
+    }).then(response => {
+      
     });
   }
 
@@ -22,19 +28,10 @@ const LoginForm = () => {
       <h1>Login</h1>
 
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
+        <Input label="Usuário" type="text" name="username" />
+        <Input label="senha" type="password" name="password" />
 
-        <input
-          type="password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-
-        <button type="submit">Entrar</button>
+        <Button>Entrar</Button>
       </form>
 
       <Link to="/login/create">Cadastro</Link>
