@@ -50,10 +50,24 @@ function USER_POST(body) {
   };
 }
 
+function PHOTO_POST(formData, token) {
+  return {
+    url: `${API_URL}/api/photo`,
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      body: formData
+    }
+  };
+}
+
 export {
   API_URL,
   TOKEN_POST,
   TOKEN_VALIDATE_POST,
   USER_GET,
-  USER_POST
+  USER_POST,
+  PHOTO_POST
 };
