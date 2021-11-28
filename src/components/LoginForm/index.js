@@ -30,11 +30,9 @@ const LoginForm = () => {
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="senha" type="password" name="password" {...password} />
 
-        {loading ? (
-          <Button disabled>Carregando...</Button>
-        ): (
-          <Button>Entrar</Button>
-        )}
+        <Button disabled={loading}>
+          {loading ? 'Carregando...' : 'Entrar'}
+        </Button>
 
         <Error error={error} />
       </form>
