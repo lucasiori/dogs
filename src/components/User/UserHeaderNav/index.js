@@ -10,7 +10,7 @@ import styles from './style.module.css';
 
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
-  const mobile = useMedia('(max-width: 720px)');
+  const mobile = useMedia('(max-width: 40rem)');
   const { pathname } = useLocation();
 
   const [mobileMenu, setMobileMenu] = useState(false);
