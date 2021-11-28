@@ -70,7 +70,7 @@ const UserStorage = ({ children }) => {
 
           const response = await fetch(url, options);
 
-          if (response.ok) {
+          if (!response.ok) {
             throw new Error('Token inválido');
           }
 
@@ -80,6 +80,8 @@ const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
 
