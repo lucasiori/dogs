@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -35,6 +37,7 @@ button, input {
 }
 
 a {
+  color: #333;
   text-decoration: none;
 }
 
@@ -42,4 +45,39 @@ a {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.title {
+  position: relative;
+  font-family: var(--type-second);
+  font-size: 3rem;
+  line-height: 1;
+  margin: 1rem 0;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  background: #fb1;
+  border-radius: 0.5rem;
+  bottom: 5px;
+  left: -5px;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacitY: 1;
+    transform: initial;
+  }
 }
