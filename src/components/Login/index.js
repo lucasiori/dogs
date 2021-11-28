@@ -5,6 +5,7 @@ import LoginForm from '../LoginForm';
 import LoginCreate from '../LoginCreate';
 import LoginForgotPassword from '../LoginForgotPassword';
 import LoginResetPassword from '../LoginResetPassword';
+import styles from './style.module.css';
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -14,14 +15,16 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="create" element={<LoginCreate />} />
-        <Route path="forgot-password" element={<LoginForgotPassword />} />
-        <Route path="reset-password" element={<LoginResetPassword />} />
-      </Routes>
-    </div>
+    <section className={styles.login}>
+      <div className={styles.forms}>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="create" element={<LoginCreate />} />
+          <Route path="forgot-password" element={<LoginForgotPassword />} />
+          <Route path="reset-password" element={<LoginResetPassword />} />
+        </Routes>
+      </div>
+    </section>
   );
 }
 
