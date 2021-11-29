@@ -98,6 +98,18 @@ function COMMENT_POST(id, body) {
   };
 }
 
+function PHOTO_DELETE(id) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('dogs:token')}`
+      }
+    }
+  };
+}
+
 export {
   API_URL,
   TOKEN_POST,
@@ -107,5 +119,6 @@ export {
   PHOTO_POST,
   PHOTOS_GET,
   PHOTO_GET,
-  COMMENT_POST
+  COMMENT_POST,
+  PHOTO_DELETE
 };
