@@ -5,8 +5,6 @@ import { UserContext } from '../../contexts/UserContext';
 const ProtectedRoute = ({ element: Element }) => {
   const { login } = useContext(UserContext);
 
-  console.log('login - ', login);
-
   if (login === true) return <Element />;
 
   return <Navigate to="/login" />;

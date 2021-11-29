@@ -84,6 +84,20 @@ function PHOTO_GET(id) {
   };
 }
 
+function COMMENT_POST(id, body) {
+  return {
+    url: `${API_URL}/api/comment/${id}`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('dogs:token')}`
+      },
+      body: JSON.stringify(body)
+    }
+  };
+}
+
 export {
   API_URL,
   TOKEN_POST,
@@ -92,5 +106,6 @@ export {
   USER_POST,
   PHOTO_POST,
   PHOTOS_GET,
-  PHOTO_GET
+  PHOTO_GET,
+  COMMENT_POST
 };
