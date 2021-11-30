@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../../contexts/UserContext';
-import useForm from '../../hooks/useForm'; 
-import Input from '../Forms/Input';
-import Button from '../Forms/Button';
-import Error from '../Error';
-import Head from '../Head';
+import { UserContext } from '../../../contexts/UserContext';
+import useForm from '../../../hooks/useForm'; 
+import Input from '../../Forms/Input';
+import Button from '../../Forms/Button';
+import Error from '../../Error';
+import Head from '../../Head';
 import styles from './style.module.css';
-import buttonStyles from '../Forms/Button/style.module.css';
+import buttonStyles from '../../Forms/Button/style.module.css';
 
 const LoginForm = () => {
   const { error, loading, userLogin } = useContext(UserContext);

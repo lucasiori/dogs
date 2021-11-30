@@ -85,3 +85,13 @@ a {
     transform: initial;
   }
 }
+
+.App {
+  min-height: calc(100vh + 10rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.AppBody {
+  flex: 1;
+}
