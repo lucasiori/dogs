@@ -8,6 +8,7 @@ import Login from './components/Login';
 import User from './components/User';
 import ProtectedRoute from './components/ProtectedRoute';
 import Photo from './components/Photo';
+import UserProfile from './components/User/UserProfile';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="login/*" element={<Login />} />
             <Route path="my-account/*" element={<ProtectedRoute element={User} />} />
             <Route path="photo/:id" element={<Photo />} />
+            <Route path="profile/:user" element={<UserProfile />} />
           </Routes>
           
           <Footer />
