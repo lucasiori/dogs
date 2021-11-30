@@ -5,7 +5,7 @@ import Error from '../../Error';
 import { ReactComponent as Send } from '../../../assets/send.svg';
 import styles from './style.module.css';
 
-const PhotoCommentsForm = ({ id, setComments }) => {
+const PhotoCommentsForm = ({ id, single, setComments }) => {
   const { error, request } = useFetch();
 
   const [comment, setComment] = useState('');
@@ -24,7 +24,10 @@ const PhotoCommentsForm = ({ id, setComments }) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${single ? styles.single : ''}`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         id="comment"
         name="comment"

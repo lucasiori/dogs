@@ -4,6 +4,10 @@
   overflow-y: auto;
 }
 
+.single .comments {
+  padding: 0;
+}
+
 .comments li {
   line-height: 1.2;
   margin-bottom: 0.5rem;
