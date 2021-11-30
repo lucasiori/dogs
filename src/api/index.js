@@ -112,7 +112,7 @@ function FORGOT_PASSWORD_POST(body) {
     options: {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
     }
@@ -125,9 +125,21 @@ function RESET_PASSWORD_POST(body) {
     options: {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(body)
+    }
+  };
+}
+
+function STATS_GET() {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('dogs:token')}`
+      }
     }
   };
 }
@@ -144,5 +156,6 @@ export {
   COMMENT_POST,
   PHOTO_DELETE,
   FORGOT_PASSWORD_POST,
-  RESET_PASSWORD_POST
+  RESET_PASSWORD_POST,
+  STATS_GET
 };
