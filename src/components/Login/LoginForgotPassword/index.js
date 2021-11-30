@@ -5,6 +5,7 @@ import useFetch from '../../../hooks/useFetch';
 import Input from '../../Forms/Input';
 import Button from '../../Forms/Button';
 import Error from '../../Error';
+import Head from '../../Head';
 
 const LoginForgotPassword = () => {
   const login = useForm();
@@ -25,6 +26,8 @@ const LoginForgotPassword = () => {
 
   return (
     <section>
+      <Head title="Perdeu a senha?" />
+      
       <h1 className="title">Perdeu a senha?</h1>
 
       {data ? (

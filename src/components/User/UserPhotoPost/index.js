@@ -6,6 +6,7 @@ import useFetch from '../../../hooks/useFetch';
 import Input from '../../Forms/Input';
 import Button from '../../Forms/Button';
 import Error from '../../Error';
+import Head from '../../Head';
 import styles from './style.module.css';
 
 const UserPhotoPost = () => {
@@ -47,6 +48,8 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto" />
+
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="name" {...name} />
         <Input label="Peso" type="number" name="weight" {...weight} />
