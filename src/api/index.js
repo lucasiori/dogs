@@ -106,6 +106,32 @@ function PHOTO_DELETE(id) {
   };
 }
 
+function FORGOT_PASSWORD_POST(body) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    }
+  };
+}
+
+function RESET_PASSWORD_POST(body) {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    }
+  };
+}
+
 export {
   API_URL,
   TOKEN_POST,
@@ -116,5 +142,7 @@ export {
   PHOTOS_GET,
   PHOTO_GET,
   COMMENT_POST,
-  PHOTO_DELETE
+  PHOTO_DELETE,
+  FORGOT_PASSWORD_POST,
+  RESET_PASSWORD_POST
 };
